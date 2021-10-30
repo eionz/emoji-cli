@@ -10,7 +10,7 @@ $ git commit -m "^s
 ## :package: Installation
 ### With [**Fisherman**](https://github.com/fisherman/fisherman)
 ```shell
-$ fisher Tosuke/emoji-cli
+$ fisher eionz/emoji-cli
 ```
 
 ## Requirements
@@ -27,3 +27,9 @@ $ fisher Tosuke/emoji-cli
 | -------- | ------- | ------- |
 | EMOJI_CLI_FILTER | the interactive filter commands list | fzy fzf peco percol |
 | EMOJI_CLI_KEYBIND | the key binding to start the completion | ^s(ctrl-s) |
+
+
+Maybe you should try this:
+`shell`
+  set -xq EMOJI_CLI_FILTER 'fzf --tac --height=20% --border --cycle'
+``

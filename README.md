@@ -29,7 +29,7 @@ $ fisher eionz/emoji-cli
 | EMOJI_CLI_KEYBIND | the key binding to start the completion | ^s(ctrl-s) |
 
 
-Maybe you should try this:
-`shell`
+### Maybe you should try this:
+```shell
   set -xq EMOJI_CLI_FILTER 'fzf --tac --height=20% --border --cycle'
-``
+```

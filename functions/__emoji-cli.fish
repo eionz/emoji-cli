@@ -1,6 +1,6 @@
 function __emoji-cli_available
   for cmd in $argv
-    if which (string match -r '^[\S]+' "$cmd") >/dev/null ^&1;
+    if which (string match -r '^[\S]+' "$cmd") >/dev/null;
       echo $cmd
       break
     end
@@ -29,9 +29,9 @@ function __emoji-cli -d 'Emoji completion on the command line'
   end
 
   cat (dirname (realpath (status -f)))/../emoji.tsv \
-    | awk '{ print ":"$1": "$2}' \
+    | awk '{ print $2" :"$1":"}' \
     | eval (__emoji-cli_available $EMOJI_CLI_FILTER)" --query '$query'" \
-    | string match -r ':[^:]+:' \
+    | string match -r '.+? ' \
     | read -l emoji
   
   if test -n $emoji

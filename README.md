@@ -2,7 +2,7 @@
 `emoji-cli` provides input completion for emoji on the command line with an interactive filter. (a fish porting of [b4b4r07/emoji-cli](https://github.com/b4b4r07/emoji-cli))
 
 ## :mag: Usage
-To insert emoji to the commandline, type ctrl-s(^s)
+To insert emoji to the fish commandline, type ctrl-s(^s)
 ```shell
 $ git commit -m "^s
 ```

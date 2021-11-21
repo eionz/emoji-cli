@@ -28,10 +28,15 @@ function __emoji-cli -d 'Emoji completion on the command line'
     end
   end
 
+  set -l matchq '.+? ?[^:]'
+  if test (string match -r "^:.+?" $query)
+    set matchq ':.+:'
+  end
+    # | string match -r '.+? ' \
   cat (dirname (realpath (status -f)))/../emoji.tsv \
     | awk '{ print $2" :"$1":"}' \
     | eval (__emoji-cli_available $EMOJI_CLI_FILTER)" --query '$query'" \
-    | string match -r '.+? ' \
+    | string match -r "$matchq" \
     | read -l emoji
   
   if test -n $emoji
